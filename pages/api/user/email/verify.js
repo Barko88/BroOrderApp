@@ -26,11 +26,11 @@ handler.post(async (req, res) => {
   await sendMail({
     to: req.user.email,
     from: MAIL_CONFIG.from,
-    subject: `Verification Email for ${process.env.WEB_URI}`,
+    subject: `Verifieringsmail för ${process.env.WEB_URI}`,
     html: `
       <div>
-        <p>Hello, ${req.user.name}</p>
-        <p>Please follow <a href="${process.env.WEB_URI}/verify-email/${token._id}">this link</a> to confirm your email.</p>
+        <p>Hej, ${req.user.name}</p>
+        <p>Var vänlig följ <a href="${process.env.WEB_URI}/verify-email/${token._id}">den här länken</a> för att bekräfta din e-post.</p>
       </div>
       `,
   });

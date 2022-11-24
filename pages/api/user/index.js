@@ -72,7 +72,7 @@ handler.patch(
       ) {
         res
           .status(403)
-          .json({ error: { message: 'The username has already been taken.' } });
+          .json({ error: { message: 'Användarnamnet har redan tagits.' } });
         return;
       }
     }

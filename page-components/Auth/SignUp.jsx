@@ -38,7 +38,7 @@ const SignUp = () => {
           }),
         });
         mutate({ user: response.user }, false);
-        toast.success('Your account has been created');
+        toast.success('Ditt konto har skapats');
         router.replace('/feed');
       } catch (e) {
         toast.error(e.message);
@@ -52,18 +52,18 @@ const SignUp = () => {
   return (
     <Wrapper className={styles.root}>
       <div className={styles.main}>
-        <h1 className={styles.title}>Join Now</h1>
+        <h1 className={styles.title}>Gå med nu</h1>
         <form onSubmit={onSubmit}>
           <Container alignItems="center">
-            <p className={styles.subtitle}>Your login</p>
+            <p className={styles.subtitle}>Din inloggning</p>
             <div className={styles.seperator} />
           </Container>
           <Input
             ref={emailRef}
             htmlType="email"
             autoComplete="email"
-            placeholder="Email Address"
-            ariaLabel="Email Address"
+            placeholder="E-postadress"
+            ariaLabel="E-postadress"
             size="large"
             required
           />
@@ -72,21 +72,21 @@ const SignUp = () => {
             ref={passwordRef}
             htmlType="password"
             autoComplete="new-password"
-            placeholder="Password"
-            ariaLabel="Password"
+            placeholder="Lösenord"
+            ariaLabel="Lösenord"
             size="large"
             required
           />
           <Spacer size={0.75} axis="vertical" />
           <Container alignItems="center">
-            <p className={styles.subtitle}>About you</p>
+            <p className={styles.subtitle}>Om dig</p>
             <div className={styles.seperator} />
           </Container>
           <Input
             ref={usernameRef}
             autoComplete="username"
-            placeholder="Username"
-            ariaLabel="Username"
+            placeholder="Användarnamn"
+            ariaLabel="Användarnamn"
             size="large"
             required
           />
@@ -94,8 +94,8 @@ const SignUp = () => {
           <Input
             ref={nameRef}
             autoComplete="name"
-            placeholder="Your name"
-            ariaLabel="Your name"
+            placeholder="Ditt namn"
+            ariaLabel="Ditt namn"
             size="large"
             required
           />
@@ -107,14 +107,14 @@ const SignUp = () => {
             size="large"
             loading={isLoading}
           >
-            Sign up
+            Bli Kund
           </Button>
         </form>
       </div>
       <div className={styles.footer}>
         <Link href="/login" passHref>
           <TextLink color="link" variant="highlight">
-            Already have an account? Log in
+            Har du redan ett konto? Logga in
           </TextLink>
         </Link>
       </div>

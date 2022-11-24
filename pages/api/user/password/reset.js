@@ -30,7 +30,9 @@ handler.post(
     const user = await findUserByEmail(db, email);
     if (!user) {
       res.status(400).json({
-        error: { message: 'We couldn’t find that email. Please try again.' },
+        error: {
+          message: 'Vi kunde inte hitta det mejlet. Var god försök igen.',
+        },
       });
       return;
     }
@@ -44,11 +46,11 @@ handler.post(
     await sendMail({
       to: email,
       from: MAIL_CONFIG.from,
-      subject: '[nextjs-mongodb-app] Reset your password.',
+      subject: '[nextjs-mongodb-app] Återställ ditt lösenord.',
       html: `
       <div>
-        <p>Hello, ${user.name}</p>
-        <p>Please follow <a href="${process.env.WEB_URI}/forget-password/${token._id}">this link</a> to reset your password.</p>
+        <p>Hej, ${user.name}</p>
+        <p>Var vänlig följ <a href="${process.env.WEB_URI}/forget-password/${token._id}">den här länken</a> för att återställa ditt lösenord.</p>
       </div>
       `,
     });

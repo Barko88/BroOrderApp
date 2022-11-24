@@ -35,17 +35,17 @@ const NewPassword = ({ token }) => {
   );
   return (
     <div className={styles.main}>
-      <h1 className={styles.title}>Reset Password</h1>
+      <h1 className={styles.title}>Återställ lösenord</h1>
       {status === 'success' ? (
         <>
           <p className={styles.subtitle}>
-            Your password has been updated successfully.
+            Ditt lösenord har uppdaterats framgångsrikt.
           </p>
         </>
       ) : (
         <>
           <p className={styles.subtitle}>
-            Enter a new password for your account
+            Ange ett nytt lösenord för ditt konto
           </p>
           <Spacer size={1} />
           <form onSubmit={onSubmit}>
@@ -53,8 +53,8 @@ const NewPassword = ({ token }) => {
               ref={passwordRef}
               htmlType="password"
               autoComplete="new-password"
-              placeholder="New Password"
-              ariaLabel="New Password"
+              placeholder="Nytt lösenord"
+              ariaLabel="Nytt lösenord"
               size="large"
               required
             />
@@ -65,7 +65,7 @@ const NewPassword = ({ token }) => {
               type="success"
               size="large"
             >
-              Reset Password
+              Återställ lösenord
             </Button>
           </form>
         </>
@@ -73,7 +73,7 @@ const NewPassword = ({ token }) => {
       <Spacer size={0.25} axis="vertical" />
       <Link href="/login" passHref>
         <ButtonLink type="success" size="large" variant="ghost">
-          Return to login
+          Återgå till inloggning
         </ButtonLink>
       </Link>
     </div>
@@ -85,8 +85,8 @@ const BadLink = () => {
     <div className={styles.main}>
       <h1 className={styles.title}>Invalid Link</h1>
       <p className={styles.subtitle}>
-        It looks like you may have clicked on an invalid link. Please close this
-        window and try again.
+        Det verkar som att du kan ha klickat på en ogiltig länk. Stäng den här
+        sidan och försök igen.
       </p>
       <Spacer size={1} />
       <Link href="/login" passHref>

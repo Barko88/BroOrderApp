@@ -32,19 +32,19 @@ handler.post(
     if (!isEmail(email)) {
       res
         .status(400)
-        .json({ error: { message: 'The email you entered is invalid.' } });
+        .json({ error: { message: 'E-postadressen du angav är ogiltig.' } });
       return;
     }
     if (await findUserByEmail(db, email)) {
       res
         .status(403)
-        .json({ error: { message: 'The email has already been used.' } });
+        .json({ error: { message: 'E-posten har redan använts.' } });
       return;
     }
     if (await findUserByUsername(db, username)) {
       res
         .status(403)
-        .json({ error: { message: 'The username has already been taken.' } });
+        .json({ error: { message: 'Användarnamnet har redan tagits.' } });
       return;
     }
     const user = await insertUser(db, {

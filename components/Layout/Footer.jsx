@@ -9,11 +9,10 @@ const Footer = () => {
     <footer className={styles.footer}>
       <Wrapper>
         <Text color="accents-7">
-          Made with ❤️, 🔥, and a keyboard by{' '}
-          <TextLink href="https://hoangvvo.com/" color="link">
-            Hoang Vo
+          2022{' '}
+          <TextLink href="https://bosphorus.se/" color="link">
+            Bosphorus AB
           </TextLink>
-          .
         </Text>
         <Spacer size={1} axis="vertical" />
         <ThemeSwitcher />
